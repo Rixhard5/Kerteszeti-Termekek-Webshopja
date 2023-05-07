@@ -1,6 +1,7 @@
 -A verziókülönbségek miatt keletkezendő fordítási hibák kiküszöbölése miatt a `tsconfig.json` fájlban az `angularCompilerOptions` részhez hozzá lett adva a `"skipLibCheck": true` sor.
 
 Host URL: https://kerteszeti-termekek-webshopja.web.app
+
 -A Firebase-el hostolt URL nem megfelelő, mivel a hosting alapból futtatási hibát dob, ezt egyelőre nem tudtam orvosolni.
 
 -Szimpla `ng generate` localhost futtatással 'hibamentesen' fut az alkalmazás.
