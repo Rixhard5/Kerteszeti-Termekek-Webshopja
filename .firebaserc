@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kerteszeti-termekek-webshopja": {
+      "hosting": {
+        "kerteszeti-termekek-webshopja": [
+          "kerteszeti-termekek-webshopja"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kerteszeti-termekek-webshopja"
+  }
+}

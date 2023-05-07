@@ -1,0 +1,31 @@
+[
+  {
+      "id": "T001",
+      "name": "Acélkanna"
+  },
+  {
+      "id": "T002",
+      "name": "Műanyag kanna"
+  },
+  {
+      "id": "T003",
+      "name": "Ágfűrész"
+  },
+  {
+      "id": "T004",
+      "name": "Ácsfejsze"
+  },
+  {
+      "id": "T005",
+      "name": "Hasítófejsze"
+  }{
+      "id": "T006",
+      "name": "Kesztyű"
+  }{
+      "id": "T007",
+      "name": "Gereblye"
+  }{
+      "id": "T008",
+      "name": "Erecsatorna tisztító"
+  }
+]

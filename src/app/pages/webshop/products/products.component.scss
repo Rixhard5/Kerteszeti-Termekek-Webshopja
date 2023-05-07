@@ -1,0 +1,34 @@
+div {
+    text-align: center;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.productImage {
+    width: 20%;
+    height: auto;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.div-card {
+    padding: 50px;
+    height: 100vh;
+}
+
+mat-card-content {
+    text-align: center;
+}
+
+form {
+    margin: 0 auto;
+}

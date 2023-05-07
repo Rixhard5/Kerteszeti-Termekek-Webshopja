@@ -1,0 +1,78 @@
+<div class="basket_kulso_div">
+  <mat-card *ngIf="basket.items.length" class="max-w-7xl mx-auto">
+    <table mat-table class="mat-elevation-z8 w-full">
+      <ng-container matColumnDef="product">
+        <th mat-header-cell *matHeaderCellDef>Termék</th>
+        <td mat-cell *matCellDef="let element">
+          <img src="{{ element.product }}" alt="product" class="w-[100px] my-5" />
+        </td>
+        <td mat-footer-cell *matFooterCellDef>
+          <button mat-raised-button routerLink="/home">Vásárlás folytatása</button>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Név</th>
+        <td mat-cell *matCellDef="let element">
+          <p class="truncate max-w-xs">{{ element.name }}</p>
+        </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Ár</th>
+        <td mat-cell *matCellDef="let element">{{ element.price | currency }}</td>
+        <td mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef>Mennyiség</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="onRemoveQuantity(element)">
+            <mat-icon>remove</mat-icon>
+          </button>
+          <span>{{ element.quantity }}</span>
+          <button mat-icon-button (click)="onAddQuantity(element)">
+            <mat-icon>add</mat-icon>
+          </button>
+        </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef>Összesen:</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.quantity * element.price | currency }}
+        </td>
+        <td mat-footer-cell *matFooterCellDef>
+          <span class="font-bold py-5 block">{{
+            getTotal(basket.items) | currency
+            }}</span>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>
+          <button (click)="onClearbasket()" mat-raised-button color="warn" class="float-right">
+            Kosár törlése
+          </button>
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <button (click)="onRemoveFrombasket(element)" mat-mini-fab color="warn" class="float-right">
+            <mat-icon>close</mat-icon>
+          </button>
+        </td>
+        <td mat-footer-cell *matFooterCellDef>
+          <button (click)="onCheckout()" mat-raised-button color="primary" class="float-right">
+            Vásárlás befejezése...
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+    </table>
+  </mat-card>
+  <mat-card *ngIf="!basket.items.length" class="mx-auto my-3 max-w-7xl">
+    <p>
+      A kosarad üres!
+      <button mat-raised-button routerLink="/webshop">Vissza a webshopra...</button>
+    </p>
+  </mat-card>
+</div>

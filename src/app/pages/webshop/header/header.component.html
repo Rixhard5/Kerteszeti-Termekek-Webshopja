@@ -1,0 +1,7 @@
+<div class="productList">
+    <mat-form-field appearance="fill">
+        <mat-select (selectionChange)="reload()" [(ngModel)]="chosenProduct">
+            <mat-option *ngFor="let obj of webshopObjectInput" [value]="obj">{{obj.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

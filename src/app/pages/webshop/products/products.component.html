@@ -1,0 +1,28 @@
+<div class="div-card" *ngIf="productInput">
+    <mat-card fxLayout fxLayoutGap="20px">
+        <span fxFlex="1 1 100%">
+            <mat-card-header>
+                <mat-card-title>{{productInput.name}}</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <img class="productImage" [src]="loadedProduct" />
+                <!--<div>{{productInput.image}}</div>-->
+            </mat-card-content>
+
+            <mat-card-content>
+                <div>Ár: {{productInput.price}} HUF</div>
+            </mat-card-content>
+
+            <mat-card-content>
+                <div>Leírás: {{productInput.description}}</div>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <form>
+                    <button mat-raised-button color="primary" type="submit" *ngIf="user" (click)="onAddToBasket()">Kosárhoz adás</button>
+                </form>
+            </mat-card-actions>
+        </span>
+    </mat-card>
+</div>
